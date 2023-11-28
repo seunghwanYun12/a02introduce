@@ -45,13 +45,17 @@
       }
 
       .bangusuk {
+        width: 300px;
+        
+        margin: auto auto auto auto;
+
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         font-family: "Noto Sans KR", sans-serif;
+        
       }
-
       /* 박준성 */
 
       /* 윤승환 */
@@ -59,6 +63,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+      .modal-root {
+        background-image: url("https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/163687953364064240.jpg?w=720");
+        background-size: cover;
+        height: 1000px;
+        opacity: 0.1;
       }
     </style>
 
@@ -100,7 +110,7 @@
     <div class="bangusuk">
       <h1>방구석 개발자들</h1>
     </div>
-    <div class="persnol-image">
+    <div class="persnol-image" id="persnol-img">
       <div class="row row-cols-1 row-cols-md-5 g-4">
         <div class="col">
           <div class="card h-100">
@@ -119,7 +129,6 @@
             <div class="card-footer">
               <button
                 type="button"
-                onclick="location.href=''"
                 class="btn btn-primary"
               >
                 방 구경하기
@@ -142,7 +151,6 @@
             <div class="card-footer">
               <button
                 type="button"
-                onclick="location.href=''"
                 class="btn btn-secondary"
               >
                 방 구경하기
@@ -165,7 +173,6 @@
             <div class="card-footer">
               <button
                 type="button"
-                onclick="location.href=''"
                 class="btn btn-success"
               >
                 방 구경하기
@@ -188,7 +195,6 @@
             <div class="card-footer">
               <button
                 type="button"
-                onclick="location.href=''"
                 class="btn btn-info"
               >
                 방 구경하기
@@ -211,7 +217,6 @@
             <div class="card-footer">
               <button
                 type="button"
-                onclick="location.href=''"
                 class="btn btn-dark"
               >
                 방 구경하기
