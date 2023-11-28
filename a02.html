@@ -1,268 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>개발하고잡이</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <style>
+      /* 박지영 */
 
+      /* 정민우 */
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 
-    /* 박지영 */
+      .persnol-image {
+        width: 1200px;
+        font-family: "Noto Sans KR", sans-serif;
 
+        margin: 10px auto 50px auto;
+      }
+      .card-body {
+        width: 200px;
 
-    /* 정민우 */
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        box-shadow: 0px 0px 3px 0px black;
 
-        .persnol-image{
-            width: 1200px;
-            font-family: 'Noto Sans KR', sans-serif;
-          
-
-            margin: 10px auto 50px auto;
-        }
-        .card-body{
-          width: 200px;
-          
-          box-shadow: 0px 0px 3px 0px black;
-
-          border-radius: 5px;
-          margin: 3px auto 3px auto;
-        }
-        .card-footer{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-        .bangusuk{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Noto Sans KR', sans-serif;
-            }
-        /* 박준성 */
-
+        border-radius: 5px;
+        margin: 3px auto 3px auto;
+      }
+      .card-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .bangusuk {
+        width: 300px;
         
-        /* 윤승환 */
-        .modal-root {
-          background-image: url('https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/163687953364064240.jpg?w=720');
-          background-size: cover;
-          height: 1000px;
-          opacity: 0.1;
-        }
+        margin: auto auto auto auto;
 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-family: "Noto Sans KR", sans-serif;
+        
+      }
+      /* 박준성 */
 
+      /* 윤승환 */
+      .modal-root {
+        background-image: url("https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/163687953364064240.jpg?w=720");
+        background-size: cover;
+        height: 1000px;
+        opacity: 0.1;
+      }
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module">
-        // Firebase 코드 부분
-        // Firebase SDK 라이브러리 가져오기
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-        // 박지영
-        
-        
-        // 정민우
-       
-        
-        // 박준성
+      // Firebase 코드 부분
+      // Firebase SDK 라이브러리 가져오기
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import {
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      // 박지영
 
+      // 정민우
 
-        // 윤승환
+      // 박준성
 
-
+      // 윤승환
     </script>
     <script>
-        //그 외 자바스크립트 코드 부분
-        // 박지영
-        
-        
-        // 정민우
-        
-        
-        // 박준성
+      //그 외 자바스크립트 코드 부분
+      // 박지영
 
+      // 정민우
 
-        // 윤승환
+      // 박준성
 
-
+      // 윤승환
     </script>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!-- 박지영 -->
-    
 
     <!-- 정민우 -->
     <div class="bangusuk">
-      <h1>
-        방구석 개발자들
-      </h1>
+      <h1>방구석 개발자들</h1>
     </div>
-    <div class="persnol-image">
-        <div class="row row-cols-1 row-cols-md-5 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="..." width="200" height="220">
-                <div class="card-body">
-                  <h5 class="card-title">정민우(팀장)</h5>
-                  <p class="card-text">MBTI : infp</p>
-                  <p class="card-text">자기소개 : </p>
-                </div>
-                <div class="card-footer">
-                  <button type="button" onclick="location.href=''" class="btn btn-primary">방 구경하기</button>
-                </div>
-              </div>
+    <div class="persnol-image" id="persnol-img">
+      <div class="row row-cols-1 row-cols-md-5 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU"
+              class="card-img-top"
+              alt="..."
+              width="200"
+              height="220"
+            />
+            <div class="card-body">
+              <h5 class="card-title">정민우(팀장)</h5>
+              <p class="card-text">MBTI : infp</p>
+              <p class="card-text">자기소개 :</p>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="..." >
-                <div class="card-body">
-                  <h5 class="card-title">박준성(팀원)</h5>
-                  <p class="card-text">MBTI : infp</p>
-                  <p class="card-text">자기소개 : </p>
-                </div>
-                <div class="card-footer">
-                  <button type="button" onclick="location.href=''" class="btn btn-secondary">방 구경하기</button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">박지영(팀원)</h5>
-                  <p class="card-text">MBTI : istj</p>
-                  <p class="card-text">자기소개 : </p>
-                </div>
-                <div class="card-footer">
-                  <button type="button" onclick="location.href=''" class="btn btn-success">방 구경하기</button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">윤승환(팀원)</h5>
-                  <p class="card-text">MBTI : infp</p>
-                  <p class="card-text">자기소개 : </p>
-                </div>
-                <div class="card-footer">
-                  <button type="button" onclick="location.href=''" class="btn btn-info">방 구경하기</button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">손바샘(팀원)</h5>
-                  <p class="card-text">MBTI : </p>
-                  <p class="card-text">자기소개 : </p>
-                </div>
-                <div class="card-footer">
-                  <button type="button" onclick="location.href=''" class="btn btn-dark">방 구경하기</button>
-                </div>
-              </div>
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+              >
+                방 구경하기
+              </button>
             </div>
           </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">박준성(팀원)</h5>
+              <p class="card-text">MBTI : infp</p>
+              <p class="card-text">자기소개 :</p>
+            </div>
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+              >
+                방 구경하기
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">박지영(팀원)</h5>
+              <p class="card-text">MBTI : istj</p>
+              <p class="card-text">자기소개 :</p>
+            </div>
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+              >
+                방 구경하기
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">윤승환(팀원)</h5>
+              <p class="card-text">MBTI : infp</p>
+              <p class="card-text">자기소개 :</p>
+            </div>
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn btn-info"
+              >
+                방 구경하기
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">손바샘(팀원)</h5>
+              <p class="card-text">MBTI :</p>
+              <p class="card-text">자기소개 :</p>
+            </div>
+            <div class="card-footer">
+              <button
+                type="button"
+                class="btn btn-dark"
+              >
+                방 구경하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- 박준성 -->
-    <div class="d-flex justify-content-center"> 
-      <div id="carouselExampleControls" class="carousel slide carousel-dark", data-bs-ride="carousel">
-          <div class="carousel-inner"> 
+    <div class="d-flex justify-content-center">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide carousel-dark"
+        ,
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
           <div class="carousel-item active">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/zl5wKhijmUA?si=fp1GGZWkaO7lIBos" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/GbHWbi0q80I?si=j2KAlqxnOsZGORFb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="carousel-item">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/Is68z8L38Cs?si=FKZUbfMbvr1_W0zY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-          </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-             </button>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/zl5wKhijmUA?si=fp1GGZWkaO7lIBos"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
           </div>
-  </div>
-  </div>
+          <div class="carousel-item">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/GbHWbi0q80I?si=j2KAlqxnOsZGORFb"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="carousel-item">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Is68z8L38Cs?si=FKZUbfMbvr1_W0zY"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- 윤승환 -->
 
-    
     <div>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          모달 버튼
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        모달 버튼
       </button>
-  
+
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-root">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-3">.col-xs-3</div>
+                    <div class="col-xs-3">.col-xs-3</div>
+                    <div class="col-xs-3">.col-xs-3</div>
+                    <div class="col-xs-3">.col-xs-3</div>
                   </div>
-                  <div class="modal-body">
-                    <div class="modal-root">
-                      <div class="container-fluid" >
-                        <div class="row">
-                            <div class="col-xs-3">.col-xs-3</div>
-                            <div class="col-xs-3">.col-xs-3</div>
-                            <div class="col-xs-3">.col-xs-3</div>
-                            <div class="col-xs-3">.col-xs-3</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3">.col-sm-3</div>
-                            <div class="col-sm-3">.col-sm-3</div>
-                            <div class="col-sm-3">.col-sm-3</div>
-                            <div class="col-sm-3">.col-sm-3</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">.col-md-3</div>
-                            <div class="col-md-3">.col-md-3</div>
-                            <div class="col-md-3">.col-md-3</div>
-                            <div class="col-md-3">.col-md-3</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3">.col-lg-3</div>
-                            <div class="col-lg-3">.col-lg-3</div>
-                            <div class="col-lg-3">.col-lg-3</div>
-                            <div class="col-lg-3">.col-lg-3</div>
-                        </div>
-                    </div>
-                    </div>
+                  <div class="row">
+                    <div class="col-sm-3">.col-sm-3</div>
+                    <div class="col-sm-3">.col-sm-3</div>
+                    <div class="col-sm-3">.col-sm-3</div>
+                    <div class="col-sm-3">.col-sm-3</div>
                   </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <div class="row">
+                    <div class="col-md-3">.col-md-3</div>
+                    <div class="col-md-3">.col-md-3</div>
+                    <div class="col-md-3">.col-md-3</div>
+                    <div class="col-md-3">.col-md-3</div>
                   </div>
+                  <div class="row">
+                    <div class="col-lg-3">.col-lg-3</div>
+                    <div class="col-lg-3">.col-lg-3</div>
+                    <div class="col-lg-3">.col-lg-3</div>
+                    <div class="col-lg-3">.col-lg-3</div>
+                  </div>
+                </div>
               </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
+        </div>
       </div>
-  
-  
-  </div>
-
-
-
-    
-</body>
-
+    </div>
+  </body>
 </html>
