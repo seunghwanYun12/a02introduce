@@ -22,7 +22,7 @@
             font-family: 'Noto Sans KR', sans-serif;
           
 
-            margin: 50px auto 50px auto;
+            margin: 10px auto 50px auto;
         }
         .card-body{
           width: 200px;
@@ -38,7 +38,13 @@
             align-items: center;
             justify-content: center;
         }
-
+        .bangusuk{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            }
         /* 박준성 */
 
         
@@ -49,6 +55,8 @@
           height: 1000px;
           opacity: 0.1;
         }
+
+
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -63,7 +71,7 @@
         
         
         // 정민우
-        
+       
         
         // 박준성
 
@@ -96,31 +104,36 @@
     
 
     <!-- 정민우 -->
+    <div class="bangusuk">
+      <h1>
+        방구석 개발자들
+      </h1>
+    </div>
     <div class="persnol-image">
         <div class="row row-cols-1 row-cols-md-5 g-4">
             <div class="col">
               <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="...">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="..." width="200" height="220">
                 <div class="card-body">
                   <h5 class="card-title">정민우(팀장)</h5>
                   <p class="card-text">MBTI : infp</p>
                   <p class="card-text">자기소개 : </p>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary">방 구경하기</button>
+                  <button type="button" onclick="location.href=''" class="btn btn-primary">방 구경하기</button>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card h-100">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="...">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2eGZBpNKX4Cmao2f-R0Un6wKXmbqk7ZOe1Q&usqp=CAU" class="card-img-top" alt="..." >
                 <div class="card-body">
                   <h5 class="card-title">박준성(팀원)</h5>
                   <p class="card-text">MBTI : infp</p>
                   <p class="card-text">자기소개 : </p>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-secondary">방 구경하기</button>
+                  <button type="button" onclick="location.href=''" class="btn btn-secondary">방 구경하기</button>
                 </div>
               </div>
             </div>
@@ -133,7 +146,7 @@
                   <p class="card-text">자기소개 : </p>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-success">방 구경하기</button>
+                  <button type="button" onclick="location.href=''" class="btn btn-success">방 구경하기</button>
                 </div>
               </div>
             </div>
@@ -146,7 +159,7 @@
                   <p class="card-text">자기소개 : </p>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-info">방 구경하기</button>
+                  <button type="button" onclick="location.href=''" class="btn btn-info">방 구경하기</button>
                 </div>
               </div>
             </div>
@@ -159,7 +172,7 @@
                   <p class="card-text">자기소개 : </p>
                 </div>
                 <div class="card-footer">
-                  <button type="button" class="btn btn-dark">방 구경하기</button>
+                  <button type="button" onclick="location.href=''" class="btn btn-dark">방 구경하기</button>
                 </div>
               </div>
             </div>
@@ -167,7 +180,29 @@
     </div>
 
     <!-- 박준성 -->
-
+    <div class="d-flex justify-content-center"> 
+      <div id="carouselExampleControls" class="carousel slide carousel-dark", data-bs-ride="carousel">
+          <div class="carousel-inner"> 
+          <div class="carousel-item active">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/zl5wKhijmUA?si=fp1GGZWkaO7lIBos" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-item">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/GbHWbi0q80I?si=j2KAlqxnOsZGORFb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-item">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Is68z8L38Cs?si=FKZUbfMbvr1_W0zY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+             </button>
+          </div>
+  </div>
+  </div>
 
     <!-- 윤승환 -->
 
