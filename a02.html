@@ -112,9 +112,8 @@
         margin-top: 50px;
       }
       /* 박준성 */
-      .custom-height {
-        height: 200px;
-      }
+      
+      
 
       .myfa {
         margin: auto auto auto auto;
@@ -180,6 +179,19 @@
 
       $(function stopVideo() {
         $("#plb2").click(function () {
+          var len = document.getElementsByTagName("iframe");
+          for (var num = 0; num < len.length; num++) {
+            var iframe = document.getElementsByTagName("iframe")[num].contentWindow;
+            iframe.postMessage(
+              '{"event":"command","func":"pauseVideo","args":""}',
+              "*"
+            );
+          }
+        });
+      });
+
+      $(function stopVideo() {
+        $("#pause").click(function () {
           var len = document.getElementsByTagName("iframe");
           for (var num = 0; num < len.length; num++) {
             var iframe = document.getElementsByTagName("iframe")[num].contentWindow;
