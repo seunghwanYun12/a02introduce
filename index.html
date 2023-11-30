@@ -224,8 +224,8 @@
         let guestbookname = $("#guestbookname").val();
         let write = $("#exampleFormControlTextarea1").val();
 
-        if(guestbookname == "" || write == ""){
-          alert('이름과 내용을 적어주세요!')
+        if (guestbookname == "" || write == "") {
+          alert("이름과 내용을 적어주세요!");
           return;
         }
 
@@ -235,17 +235,19 @@
         };
         await addDoc(collection(db, "banggusuk"), doc);
         alert("감사합니다!");
-        window.location.reload();
+        getData();
       });
 
-      let docs = await getDocs(collection(db, "banggusuk"));
-      docs.forEach((doc) => {
-        let row = doc.data();
+      async function getData() {
+        let docs = await getDocs(collection(db, "banggusuk"));
+        $("#guest-book-main").empty();
+        docs.forEach((doc) => {
+          let row = doc.data();
 
-        let guestbookname = row["guestbookname"];
-        let write = row["exampleFormControlTextarea1"];
+          let guestbookname = row["guestbookname"];
+          let write = row["exampleFormControlTextarea1"];
 
-        let temp_html = `
+          let temp_html = `
         <div class="guest-book-card">
         <div class="card-header">
           <b>${guestbookname}</b>
@@ -256,8 +258,11 @@
           </blockquote>
         </div>
       </div>`;
-        $("#guest-book-main").append(temp_html);
-      });
+          $("#guest-book-main").append(temp_html);
+        });
+      }
+
+      getData();
 
       // 박준성
 
