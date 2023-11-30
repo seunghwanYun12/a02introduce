@@ -224,6 +224,11 @@
         let guestbookname = $("#guestbookname").val();
         let write = $("#exampleFormControlTextarea1").val();
 
+        if(guestbookname == "" || write == ""){
+          alert('이름과 내용을 적어주세요!')
+          return;
+        }
+
         let doc = {
           guestbookname: guestbookname,
           exampleFormControlTextarea1: write,
