@@ -223,11 +223,12 @@
       $("#writeguestbook").click(async function () {
         let guestbookname = $("#guestbookname").val();
         let write = $("#exampleFormControlTextarea1").val();
-
+        
         if (guestbookname == "" || write == "") {
           alert("이름과 내용을 적어주세요!");
           return;
         }
+
 
         let doc = {
           guestbookname: guestbookname,
@@ -236,6 +237,10 @@
         await addDoc(collection(db, "banggusuk"), doc);
         alert("감사합니다!");
         getData();
+        
+        $("#guestbookname").val('');
+        $("#exampleFormControlTextarea1").val('');
+        
       });
 
       async function getData() {
