@@ -98,7 +98,7 @@
         background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2jpUP%2FbtsA9TxuhPN%2FPOKTYeiv2VkKkrJiG15fO0%2Fimg.png");
       }
       .modal-img-itroduce {
-        
+
         padding: 0px;
 
         background-color: white;
@@ -108,15 +108,61 @@
       }
       .col-md-9{
         width: 500px;
-        
+
         margin-left: 20px;
-        
+
         margin-top: 50px;
       }
-      /* 박준성 */
-      .custom-height {
-        height: 200px;
+      .guest-book{
+
+
+        width: 700px;
+
+        margin: 20px auto 0px auto;
+
+        padding: 50px;
+
+        border: 2px solid;
+
+        border-radius: 5px;
       }
+
+      .write-btn{
+
+        padding-top: 10px;
+        margin-left: 530px;
+      }
+
+      .welcome{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 50px;
+        margin-top: 0px;
+      }
+
+      .guest-book-card{
+
+        width: 700px;
+        margin-left: 602px;
+        margin: 20px auto 20px auto;
+
+        border: 1px solid;
+        border-color: gray;
+        border-radius: 5px;
+      }
+      .blockquote{
+        font-size: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 15px;
+      }
+     
+
+
+      /* 박준성 */
 
       .myfa {
         margin: auto auto auto auto;
@@ -154,10 +200,60 @@
       } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
       import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
+       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+       const firebaseConfig = {
+        apiKey: "AIzaSyBdMZfWbvl-RC2ufBg4xKn8MrvVzmfeGe0",
+        authDomain: "banggusuk-3be33.firebaseapp.com",
+        projectId: "banggusuk-3be33",
+        storageBucket: "banggusuk-3be33.appspot.com",
+        messagingSenderId: "692569296544",
+        appId: "1:692569296544:web:d1e9c32b5fcfcb484b83c5",
+        measurementId: "G-TDGKYT5P7C",
+      };
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
       // 박지영
 
       // 정민우
+     
 
+      $("#writeguestbook").click(async function() {
+        let guestbookname = $("#guestbookname").val();
+        let write = $("#exampleFormControlTextarea1").val();
+
+        let doc = {
+          'guestbookname': guestbookname,
+          'exampleFormControlTextarea1': write          
+        };
+        await addDoc(collection(db, "banggusuk"), doc);
+        alert('감사합니다!');
+        window.location.reload();
+      })
+
+      let docs = await getDocs(collection(db, "banggusuk"));
+      docs.forEach((doc) => {
+        let row = doc.data();
+
+        let guestbookname = row['guestbookname']
+        let write = row['exampleFormControlTextarea1'] 
+
+        let temp_html = `
+        <div class="guest-book-card">
+        <div class="card-header">
+          <b>${guestbookname}</b>
+        </div>
+        <div class="card-body2">
+          <blockquote class="blockquote mb-0">
+            <p>${write}</p>
+          </blockquote>
+        </div>
+      </div>`;
+        $("#guest-book-main").append(temp_html);
+        
+      });
+    
       // 박준성
 
       // 윤승환
@@ -167,24 +263,21 @@
       // 박지영
 
       // 정민우
+      function writeguestbook() {
+       
+      }
 
       // 박준성
-      
+
       $(function () {
         $("#plb2").click(function () {
-          alert("알림")
+          alert("알림");
           $("iframe")[1].contentWindow.postMessage(
             '{"event":"command","func":"pauseVideo","args":""}',
             "*"
           );
         });
       });
-
-
-
-    
-
-
 
       // 윤승환
     </script>
@@ -211,7 +304,6 @@
           조용하지만, 웹개발을 배워 일상에서 사용하고자합니다.<br />
           팀목표: 일상에서 웹개발 활용하기.<br />
           우리 팀의 약속 : 포기 하지 않기.
-          
         </p>
       </div>
     </div>
@@ -265,21 +357,21 @@
                     <div class="modal-body">
                       <div class="container-fluid">
                         <div class="mt-3"></div>
-                       <div class="modal-img-itroduce">
-                        <div class="row">
-                          <div class="col-md-3">
-                            <img
-                              class="modal-img"
-                              src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbsUayl%2FbtsA3yNDir3%2FY4KBAjqqJFngoHcIYW3f30%2Fimg.jpg"
-                            />
-                          </div>
-                          <div class="col-md-9">
-                            <p>이름 : 정민우</p>
-                            <p>MBTI : INFP</p>
-                            <p>한마디 : 열심히 하겠습니다!</p>
+                        <div class="modal-img-itroduce">
+                          <div class="row">
+                            <div class="col-md-3">
+                              <img
+                                class="modal-img"
+                                src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbsUayl%2FbtsA3yNDir3%2FY4KBAjqqJFngoHcIYW3f30%2Fimg.jpg"
+                              />
+                            </div>
+                            <div class="col-md-9">
+                              <p>이름 : 정민우</p>
+                              <p>MBTI : INFP</p>
+                              <p>한마디 : 열심히 하겠습니다!</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
                         <div class="row mt-3">
                           <div
                             class="accordion"
@@ -524,19 +616,19 @@
                       <div class="container-fluid">
                         <div class="mt-3"></div>
                         <div class="modal-img-itroduce">
-                        <div class="row">
-                          <div class="col-md-3">
-                            <img
-                              class="modal-img"
-                              src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb6M0UQ%2FbtsA8ruvwUM%2FkvN44OzoHqY8HlLbgAnYj0%2Fimg.png"
-                            />
+                          <div class="row">
+                            <div class="col-md-3">
+                              <img
+                                class="modal-img"
+                                src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb6M0UQ%2FbtsA8ruvwUM%2FkvN44OzoHqY8HlLbgAnYj0%2Fimg.png"
+                              />
+                            </div>
+                            <div class="col-md-9">
+                              <p>이름 : 박준성</p>
+                              <p>MBTI : INFP</p>
+                              <p>한마디 : 열심히 하겠습니다!</p>
+                            </div>
                           </div>
-                          <div class="col-md-9">
-                            <p>이름 : 박준성</p>
-                            <p>MBTI : INFP</p>
-                            <p>한마디 : 열심히 하겠습니다!</p>
-                          </div>
-                        </div>
                         </div>
                         <div class="row mt-3">
                           <div
@@ -806,19 +898,19 @@
                       <div class="container-fluid">
                         <div class="mt-3"></div>
                         <div class="modal-img-itroduce">
-                        <div class="row">
-                          <div class="col-md-3">
-                            <img
-                              class="modal-img"
-                              src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FxAZen%2FbtsA7urvGZh%2FofKuB6Fxgd28hvNZO5p6Mk%2Fimg.png"
-                            />
+                          <div class="row">
+                            <div class="col-md-3">
+                              <img
+                                class="modal-img"
+                                src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FxAZen%2FbtsA7urvGZh%2FofKuB6Fxgd28hvNZO5p6Mk%2Fimg.png"
+                              />
+                            </div>
+                            <div class="col-md-9">
+                              <p>이름 : 박지영</p>
+                              <p>MBTI : ISTJ</p>
+                              <p>한마디 : 열심히 하겠습니다!</p>
+                            </div>
                           </div>
-                          <div class="col-md-9">
-                            <p>이름 : 박지영</p>
-                            <p>MBTI : ISTJ</p>
-                            <p>한마디 : 열심히 하겠습니다!</p>
-                          </div>
-                        </div>
                         </div>
                         <div class="row mt-3">
                           <div
@@ -1117,20 +1209,20 @@
                       <div class="container-fluid">
                         <div class="mt-3"></div>
                         <div class="modal-img-itroduce">
-                        <div class="row">
-                          <div class="col-md-3">
-                            <img
-                              class="modal-img"
-                              src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcPXoQP%2FbtsBaX7yJ3N%2FKWZHjPO1jyF4s3dUk64ye1%2Fimg.png"
-                            />
-                          </div>
-                          <div class="col-md-9">
-                            <p>이름 : 윤승환</p>
-                            <p>MBTI : INFP</p>
-                            <p>한마디 : 열심히 하겠습니다!</p>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <img
+                                class="modal-img"
+                                src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcPXoQP%2FbtsBaX7yJ3N%2FKWZHjPO1jyF4s3dUk64ye1%2Fimg.png"
+                              />
+                            </div>
+                            <div class="col-md-9">
+                              <p>이름 : 윤승환</p>
+                              <p>MBTI : INFP</p>
+                              <p>한마디 : 열심히 하겠습니다!</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
                         <div class="row mt-3">
                           <div
                             class="accordion"
@@ -1369,7 +1461,7 @@
               </div>
               <div class="carousel-item">
                 <iframe
-                id="p2"
+                  id="p2"
                   width="100%"
                   height="315"
                   src="https://www.youtube.com/embed/Dll-cWhSJOY?enablejsapi=1si=gLj9ahIl4beUMGMG"
@@ -1435,5 +1527,52 @@
     </div>
 
     <!-- 윤승환 -->
+
+    <!-- 방명록 -->
+
+    <div class="guest-book">
+      <div class="welcome">
+        <h1>🎉방명록🎉</h1>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">이름</label>
+        <input
+          type="email"
+          class="form-control"
+          id="guestbookname"
+          placeholder="홍길동"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >방명록</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          placeholder="내용을 입력해 주세요."
+        ></textarea>
+        <div class="write-btn">
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="writeguestbook"
+          >
+            작성
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="guest-book-main">
+      <div class="guest-book-card">
+        <div class="card-header"><b>홍길동</b></div>
+        <div class="card-body2">
+          <blockquote class="blockquote mb-0">
+            <p>잘 놀다 갑니다!</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
