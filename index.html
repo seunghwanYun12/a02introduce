@@ -98,24 +98,20 @@
         background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2jpUP%2FbtsA9TxuhPN%2FPOKTYeiv2VkKkrJiG15fO0%2Fimg.png");
       }
       .modal-img-itroduce {
-
         padding: 0px;
 
         background-color: white;
 
         border-radius: 5px;
-
       }
-      .col-md-9{
+      .col-md-9 {
         width: 500px;
 
         margin-left: 20px;
 
         margin-top: 50px;
       }
-      .guest-book{
-
-
+      .guest-book {
         width: 700px;
 
         margin: 20px auto 0px auto;
@@ -127,13 +123,12 @@
         border-radius: 5px;
       }
 
-      .write-btn{
-
+      .write-btn {
         padding-top: 10px;
         margin-left: 530px;
       }
 
-      .welcome{
+      .welcome {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -143,8 +138,7 @@
         margin-top: 0px;
       }
 
-      .guest-book-card{
-
+      .guest-book-card {
         width: 700px;
         margin-left: 602px;
         margin: 20px auto 20px auto;
@@ -153,14 +147,12 @@
         border-color: gray;
         border-radius: 5px;
       }
-      .blockquote{
+      .blockquote {
         font-size: 14px;
         padding-top: 5px;
         padding-bottom: 5px;
         margin-left: 15px;
       }
-     
-
 
       /* 박준성 */
 
@@ -179,12 +171,22 @@
         height: 100%;
         object-fit: cover;
         border-radius: 5px;
-        }
+      }
       .modal-root {
         background-image: url("https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/163687953364064240.jpg?w=720");
         background-size: cover;
         height: 1000px;
         opacity: 0.1;
+      }
+
+      /* 아이콘에만 클릭 영역을 제한하는 추가 스타일 */
+      .carousel-control-custom {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
       }
     </style>
 
@@ -200,8 +202,8 @@
       } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
       import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-       const firebaseConfig = {
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
         apiKey: "AIzaSyBdMZfWbvl-RC2ufBg4xKn8MrvVzmfeGe0",
         authDomain: "banggusuk-3be33.firebaseapp.com",
         projectId: "banggusuk-3be33",
@@ -210,34 +212,33 @@
         appId: "1:692569296544:web:d1e9c32b5fcfcb484b83c5",
         measurementId: "G-TDGKYT5P7C",
       };
-        // Firebase 인스턴스 초기화
-        const app = initializeApp(firebaseConfig);
+      // Firebase 인스턴스 초기화
+      const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
 
       // 박지영
 
       // 정민우
-     
 
-      $("#writeguestbook").click(async function() {
+      $("#writeguestbook").click(async function () {
         let guestbookname = $("#guestbookname").val();
         let write = $("#exampleFormControlTextarea1").val();
 
         let doc = {
-          'guestbookname': guestbookname,
-          'exampleFormControlTextarea1': write          
+          guestbookname: guestbookname,
+          exampleFormControlTextarea1: write,
         };
         await addDoc(collection(db, "banggusuk"), doc);
-        alert('감사합니다!');
+        alert("감사합니다!");
         window.location.reload();
-      })
+      });
 
       let docs = await getDocs(collection(db, "banggusuk"));
       docs.forEach((doc) => {
         let row = doc.data();
 
-        let guestbookname = row['guestbookname']
-        let write = row['exampleFormControlTextarea1'] 
+        let guestbookname = row["guestbookname"];
+        let write = row["exampleFormControlTextarea1"];
 
         let temp_html = `
         <div class="guest-book-card">
@@ -251,9 +252,8 @@
         </div>
       </div>`;
         $("#guest-book-main").append(temp_html);
-        
       });
-    
+
       // 박준성
 
       // 윤승환
@@ -263,17 +263,17 @@
       // 박지영
 
       // 정민우
-      function writeguestbook() {
-       
-      }
+      function writeguestbook() {}
 
       // 박준성
 
       $(function stopVideo() {
         $("#plb2").click(function () {
+          $("#carouselExampleControls").carousel("prev");
           var len = document.getElementsByTagName("iframe");
           for (var num = 0; num < len.length; num++) {
-            var iframe = document.getElementsByTagName("iframe")[num].contentWindow;
+            var iframe =
+              document.getElementsByTagName("iframe")[num].contentWindow;
             iframe.postMessage(
               '{"event":"command","func":"pauseVideo","args":""}',
               "*"
@@ -284,9 +284,11 @@
 
       $(function stopVideo() {
         $("#pause").click(function () {
+          $("#carouselExampleControls").carousel("next");
           var len = document.getElementsByTagName("iframe");
           for (var num = 0; num < len.length; num++) {
-            var iframe = document.getElementsByTagName("iframe")[num].contentWindow;
+            var iframe =
+              document.getElementsByTagName("iframe")[num].contentWindow;
             iframe.postMessage(
               '{"event":"command","func":"pauseVideo","args":""}',
               "*"
@@ -1510,11 +1512,9 @@
                 ></iframe>
               </div>
               <button
-                id="pause"
-                class="carousel-control-prev"
+                id="plb2"
+                class="carousel-control-prev carousel-control-custom"
                 type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev"
               >
                 <span
                   class="carousel-control-prev-icon"
@@ -1523,11 +1523,9 @@
                 <span class="visually-hidden">Previous</span>
               </button>
               <button
-                id="plb2"
-                class="carousel-control-next"
+                id="pause"
+                class="carousel-control-next carousel-control-custom"
                 type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="next"
               >
                 <span
                   class="carousel-control-next-icon"
@@ -1570,11 +1568,7 @@
           placeholder="내용을 입력해 주세요."
         ></textarea>
         <div class="write-btn">
-          <button
-            type="button"
-            class="btn btn-primary"
-            id="writeguestbook"
-          >
+          <button type="button" class="btn btn-primary" id="writeguestbook">
             작성
           </button>
         </div>
