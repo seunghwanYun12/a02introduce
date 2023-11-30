@@ -269,13 +269,29 @@
 
       // 박준성
 
-      $(function () {
+      $(function stopVideo() {
         $("#plb2").click(function () {
-          alert("알림");
-          $("iframe")[1].contentWindow.postMessage(
-            '{"event":"command","func":"pauseVideo","args":""}',
-            "*"
-          );
+          var len = document.getElementsByTagName("iframe");
+          for (var num = 0; num < len.length; num++) {
+            var iframe = document.getElementsByTagName("iframe")[num].contentWindow;
+            iframe.postMessage(
+              '{"event":"command","func":"pauseVideo","args":""}',
+              "*"
+            );
+          }
+        });
+      });
+
+      $(function stopVideo() {
+        $("#pause").click(function () {
+          var len = document.getElementsByTagName("iframe");
+          for (var num = 0; num < len.length; num++) {
+            var iframe = document.getElementsByTagName("iframe")[num].contentWindow;
+            iframe.postMessage(
+              '{"event":"command","func":"pauseVideo","args":""}',
+              "*"
+            );
+          }
         });
       });
 
@@ -1452,7 +1468,7 @@
                 <iframe
                   width="100%"
                   height="315"
-                  src="https://www.youtube.com/embed/BBdC1rl5sKY?si=E6icidSNk1KhGLoB"
+                  src="https://www.youtube.com/embed/BBdC1rl5sKY?enablejsapi=1&si=E6icidSNk1KhGLoB"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1464,7 +1480,7 @@
                   id="p2"
                   width="100%"
                   height="315"
-                  src="https://www.youtube.com/embed/Dll-cWhSJOY?enablejsapi=1si=gLj9ahIl4beUMGMG"
+                  src="https://www.youtube.com/embed/Dll-cWhSJOY?enablejsapi=1&si=gLj9ahIl4beUMGMG"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1475,7 +1491,7 @@
                 <iframe
                   width="100%"
                   height="315"
-                  src="https://www.youtube.com/embed/3LgCgG0McHM?si=KnXfFdFpZuCaDZUQ"
+                  src="https://www.youtube.com/embed/3LgCgG0McHM?enablejsapi=1&si=KnXfFdFpZuCaDZUQ"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1486,7 +1502,7 @@
                 <iframe
                   width="100%"
                   height="315"
-                  src="https://www.youtube.com/embed/nu3YsyDplUQ?si=n1gkp_71Bw5AwzHb"
+                  src="https://www.youtube.com/embed/nu3YsyDplUQ?enablejsapi=1&si=n1gkp_71Bw5AwzHb"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
