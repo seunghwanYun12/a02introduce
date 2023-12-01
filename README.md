@@ -13,17 +13,17 @@
 ## 👩 Team 방구석 개발자들
 
 - <strong>정민우</strong>
-    - [https://github.com/jung-minu](https://github.com/jung-minu)
     - 역할 - 개인카드, 방명록
+    - [https://github.com/jung-minu](https://github.com/jung-minu)
 - <strong>박준성</strong>
-    - [https://github.com/somebodyhelpme119](https://github.com/somebodyhelpme119)
     - 역할 - 팀원들이 좋아하는 음악들(유튜브 화면) 슬라이드
+    - [https://github.com/somebodyhelpme119](https://github.com/somebodyhelpme119)
 - <strong>박지영</strong>
-    - [https://github.com/jiyeong2023](https://github.com/jiyeong2023)
     - 역할 - 메인상단이미지, 방구석토크 로고, 팀소개글
+    - [https://github.com/jiyeong2023](https://github.com/jiyeong2023)
 - <strong>윤승환</strong>
-    - [https://github.com/lovelyunsh](https://github.com/lovelyunsh)
     - 역할 - 개인페이지
+    - [https://github.com/lovelyunsh](https://github.com/lovelyunsh)
 
 ## **📚기술스택**
 
