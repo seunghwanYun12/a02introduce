@@ -253,7 +253,6 @@
         );
 
         let docs = await getDocs(q);
-        console.log(docs)
         $("#guest-book-main").empty();
         docs.forEach((doc) => {
           let row = doc.data();
@@ -1599,14 +1598,7 @@
       </div>
     </div>
     <div id="guest-book-main">
-      <div class="guest-book-card">
-        <div class="card-header"><b>홍길동</b></div>
-        <div class="card-body2">
-          <blockquote class="blockquote mb-0">
-            <p>잘 놀다 갑니다!</p>
-          </blockquote>
-        </div>
-      </div>
+
     </div>
   </body>
 </html>
