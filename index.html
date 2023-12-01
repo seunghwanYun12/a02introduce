@@ -199,6 +199,8 @@
       import {
         collection,
         addDoc,
+        query,
+        orderBy
       } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
       import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
@@ -223,9 +225,9 @@
       $("#writeguestbook").click(async function () {
         let guestbookname = $("#guestbookname").val();
         let write = $("#exampleFormControlTextarea1").val();
-        
+        let guesttime = new Date().getTime();
         if (guestbookname == "" || write == "") {
-          alert("이름과 내용을 적어주세요!");
+          alert("이름과 내용을 모두 적어주세요!");
           return;
         }
 
@@ -233,6 +235,7 @@
         let doc = {
           guestbookname: guestbookname,
           exampleFormControlTextarea1: write,
+          guesttime: guesttime,
         };
         await addDoc(collection(db, "banggusuk"), doc);
         alert("감사합니다!");
@@ -244,7 +247,13 @@
       });
 
       async function getData() {
-        let docs = await getDocs(collection(db, "banggusuk"));
+        const q = await query(
+          collection(db, "banggusuk"),
+          orderBy("guesttime", "asc")
+        );
+
+        let docs = await getDocs(q);
+        console.log(docs)
         $("#guest-book-main").empty();
         docs.forEach((doc) => {
           let row = doc.data();
@@ -1566,7 +1575,7 @@
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">이름</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
           id="guestbookname"
           placeholder="홍길동"
